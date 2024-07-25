@@ -1,0 +1,155 @@
+.container--recipe {
+  height: inherit;
+  margin-top: 50px;
+  @media (min-width: 992px) {
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: 5fr 1fr;
+    grid-template-areas:
+      "header info"
+      "main info"
+      ". info";
+  }
+}
+
+.recipe {
+  $self: &;
+  color: #fff;
+  height: 100%;
+  padding-block: 40px;
+  &__header {
+    grid-area: header;
+  }
+  &__name {
+    display: inline;
+    border-bottom: solid 1px var(--primary);
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+  }
+  &__info {
+    grid-area: info;
+    align-self: flex-start;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 30px;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: 992px) {
+      margin-top: 0;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__info-item {
+    padding: 15px;
+    background: linear-gradient(
+      180deg,
+      rgba(131, 151, 136, 0.7) 0%,
+      rgba(43, 49, 44, 0.9) 100%
+    );
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__info-title {
+    font: {
+      family: var(--bebas-nue);
+      size: 18px;
+    }
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  &__info-body {
+    font-size: 18px;
+  }
+  &__main {
+    grid-area: main;
+  }
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font: {
+      family: var(--bebas-nue);
+      size: 28px;
+    }
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    line-height: 1;
+    &:before {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: 30px;
+    }
+    &--ingredients {
+      &:before {
+        background-image: url("/carrot-icon.svg");
+      }
+    }
+    &--steps {
+      &:before {
+        background-image: url("/checklist-icon.svg");
+      }
+    }
+    &--meal-type {
+      &:before {
+        background-image: url("/utensils-icon.svg");
+      }
+    }
+    @media (min-width: 768px) {
+      margin-top: 50px;
+    }
+  }
+  &__list {
+    padding-left: 28px;
+    &--ingredients {
+      list-style-image: url("/check-icon.svg");
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  &__item {
+    font-size: 18px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    #{$self}__list--steps & {
+      &::marker {
+        color: var(--primary);
+        font-family: var(--bebas-nue);
+        font-weight: 800;
+        font-size: 18px;
+      }
+    }
+  }
+  &__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  &__link {
+    border-radius: 50px;
+    padding: 8px 20px;
+    background-color: var(--primary);
+    color: #000;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}

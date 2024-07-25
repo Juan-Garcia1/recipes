@@ -1,0 +1,33 @@
+.hero {
+  background: {
+    color: #000;
+    image: url("/hero-bg.jpg");
+    repeat: no-repeat;
+    size: cover;
+    position: center;
+  }
+  color: #fff;
+  padding: 30px 15px 80px 15px;
+  &__content {
+    max-width: 800px;
+    margin-inline: auto;
+    margin-top: 50px;
+  }
+  &__title,
+  &__subtext {
+    text-align: center;
+  }
+  &__title {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 10px;
+    @media (min-width: 768px) {
+      font-size: 68px;
+    }
+  }
+  &__subtext {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #bdbbb6;
+  }
+}
