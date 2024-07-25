@@ -1,0 +1,41 @@
+.card {
+  $self: &;
+  &__img {
+    transition: transform 0.3s ease;
+    display: block;
+  }
+  &__thumbnail {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    &:hover {
+      #{$self}__img {
+        transform: scale3d(1.1, 1.1, 1);
+      }
+    }
+  }
+  &__badge {
+    background-color: #f5e4d7;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  &__title {
+    font: {
+      family: var(--bebas-nue);
+      size: 20px;
+    }
+    transition: color 0.3s ease;
+    &:hover {
+      color: #839788;
+    }
+  }
+}

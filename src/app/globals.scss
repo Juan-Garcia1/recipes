@@ -1,0 +1,78 @@
+:root {
+  --primary: #839788;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--nunito);
+  color: #000;
+  background-color: #fff;
+}
+
+h1 {
+  font-family: var(--bebas-nue);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.logo {
+  display: block;
+  width: 80px;
+  margin: auto;
+}
+
+.no-results-message {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.recipes {
+  list-style: none;
+  margin: 30px auto;
+  display: grid;
+  column-gap: 15px;
+  row-gap: 20px;
+  grid-template-columns: 1fr;
+  @media (min-width: 390px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 22px;
+  color: #fff;
+}
